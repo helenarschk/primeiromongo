@@ -1,0 +1,21 @@
+<%- include('../cabecalho.ejs')%>
+    <main class="container">
+        <a href="/generos" class="back-link">← Voltar para lista</a>
+
+        <div class="form-container">
+            <h2>Cadastrar Novo Gênero</h2>
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="nome">Nome do Gênero *</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <a href="/generos" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../rodape.ejs')%>

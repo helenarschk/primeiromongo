@@ -1,0 +1,43 @@
+<%- include ('cabecalho.ejs')%>
+    <main class="container">
+        <a href="/musicas" class="back-link">← Voltar para lista</a>
+        <div class="detail-box">
+            <h2>Cadastro enviado!</h2>
+
+            <div class="detail-item">
+                <label>Título:</label>
+                <p>
+                    <%= nome %>
+                </p>
+            </div>
+
+            <div class="detail-item">
+                <label>Artista:</label>
+                <p>
+                    <%= artista %>
+                </p>
+            </div>
+
+            <div class="detail-item">
+                <label>Gênero:</label>
+                <p>
+                    <%= genero %>
+                </p>
+            </div>
+
+            <div class="detail-item">
+                <label>Ano:</label>
+                <p>
+                    <%= ano %>
+                </p>
+            </div>
+
+            <div class="detail-item">
+                <label>Duração:</label>
+                <p>
+                    <%= duracao %>
+                </p>
+            </div>
+        </div>
+    </main>
+    <%- include ('rodape.ejs')%>

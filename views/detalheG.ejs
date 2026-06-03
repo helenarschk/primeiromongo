@@ -1,0 +1,35 @@
+<%- include('cabecalho.ejs')%>
+    <main class="container">
+        <a href="/generos" class="back-link">← Voltar para lista</a>
+
+        <div class="detail-box">
+            <h2>Detalhes do Gênero</h2>
+
+            <div class="detail-item">
+                <label>Nome:</label>
+                <p>
+                    <%= nome %>
+                </p>
+            </div>
+
+            <div class="detail-item">
+                <label>Descrição:</label>
+                <p>
+                    <%= desc %>
+                </p>
+            </div>
+        </div>
+
+        <div class="detail-box">
+            <h3>Músicas deste Gênero</h3>
+            <ul class="musicas-list">
+                <li><a href="<%=l1 %>" class="link">
+                        <%= m1 %>
+                    </a></li>
+                <li><a href="<%=l2 %>" class="link">
+                        <%= m2 %>
+                    </a></li>
+            </ul>
+        </div>
+    </main>
+    <%- include('rodape.ejs')%>

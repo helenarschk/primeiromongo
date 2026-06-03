@@ -1,0 +1,49 @@
+<%- include('cabecalho.ejs')%>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lista de Artistas</h2>
+            <a href="/artistas/cadastro" class="btn btn-success">+ Novo Artista</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hotel Paulista</th>
+                        <th>País</th>
+                        <th>Ano Início</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>David Bowie</td>
+                        <td>Reino Unido</td>
+                        <td>1962</td>
+                        <td><a href="/artistas/davidbowie" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>The Cure</td>
+                        <td>Reino Unido</td>
+                        <td>1976</td>
+                        <td><a href="/artistas/thecure" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Rita Lee</td>
+                        <td>Brasil</td>
+                        <td>1966</td>
+                        <td><a href="/artistas/ritalee" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Beabadoobee</td>
+                        <td>Filipinas/Reino Unido</td>
+                        <td>2017</td>
+                        <td><a href="/artistas/beabadoobee" class="link">Ver Detalhes</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <%- include('rodape.ejs')%>

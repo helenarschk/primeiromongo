@@ -1,0 +1,31 @@
+<%- include('../cabecalho.ejs')%>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lista de Gêneros</h2>
+            <a href="/generos/add" class="btn btn-success">+ Novo Gênero</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%generos.forEach(genero=> {%>
+                        <tr>
+                            <td>
+                                <%=genero.nome%>
+                            </td>
+                            <td><a href="/generos/<%=genero.nome%>" class="link">Ver Detalhes</a></td>
+                        </tr>
+                        <%})%>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <%- include('../rodape.ejs')%>

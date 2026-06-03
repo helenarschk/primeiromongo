@@ -1,0 +1,39 @@
+<%- include('cabecalho.ejs')%>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lista de Gêneros</h2>
+            <a href="/generos/cadastro" class="btn btn-success">+ Novo Gênero</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rock</td>
+                        <td>Rock internacional e nacional</td>
+                        <td><a href="/generos/rock" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>MPB</td>
+                        <td>Música Popular Brasileira</td>
+                        <td><a href="/generos/mpb" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Alternativa</td>
+                        <td>Música Alternativa</td>
+                        <td><a href="/generos/alternativa" class="link">Ver Detalhes</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <%- include('rodape.ejs')%>

@@ -1,0 +1,91 @@
+<%- include('cabecalho.ejs')%>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lista de Músicas</h2>
+            <a href="/musicas/cadastro" class="btn btn-success">+ Nova Música</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Artista</th>
+                        <th>Gênero</th>
+                        <th>Ano</th>
+                        <th>Duração</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ziggy Stardust</td>
+                        <td>David Bowie</td>
+                        <td>Rock</td>
+                        <td>1972</td>
+                        <td>3:30</td>
+                        <td><a href="/musicas/ziggystardust" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>The Jean Genie</td>
+                        <td>David Bowie</td>
+                        <td>Rock</td>
+                        <td>1973</td>
+                        <td>3:45</td>
+                        <td><a href="/musicas/thejeangenie" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Just Like Heaven</td>
+                        <td>The Cure</td>
+                        <td>Rock/Alternativa</td>
+                        <td>1987</td>
+                        <td>4:10</td>
+                        <td><a href="/musicas/justlikeheaven" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inbetween Days</td>
+                        <td>The Cure</td>
+                        <td>Rock/Alternativa</td>
+                        <td>1985</td>
+                        <td>4:20</td>
+                        <td><a href="/musicas/inbetweendays" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lança Perfume</td>
+                        <td>Rita Lee</td>
+                        <td>MPB/Rock</td>
+                        <td>1980</td>
+                        <td>4:30</td>
+                        <td><a href="/musicas/lançaperfume" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mania de Você</td>
+                        <td>Rita Lee</td>
+                        <td>MPB/Rock</td>
+                        <td>1980</td>
+                        <td>4:40</td>
+                        <td><a href="/musicas/maniadevocê" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>Apple Cider</td>
+                        <td>beabadoobee</td>
+                        <td>Alternativa</td>
+                        <td>2019</td>
+                        <td>3:15</td>
+                        <td><a href="/musicas/applecider" class="link">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>If You Want To</td>
+                        <td>beabadoobee</td>
+                        <td>Alternativa</td>
+                        <td>2020</td>
+                        <td>3:20</td>
+                        <td><a href="/musicas/ifyouwantto" class="link">Ver Detalhes</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <%- include('rodape.ejs')%>

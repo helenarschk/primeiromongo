@@ -1,0 +1,22 @@
+<%- include ('cabecalho.ejs')%>
+    <main class="container">
+        <a href="/generos" class="back-link">← Voltar para lista</a>
+        <div class="detail-box">
+            <h2>Cadastro enviado!</h2>
+
+            <div class="detail-item">
+                <label>Nome:</label>
+                <p>
+                    <%= nome %>
+                </p>
+            </div>
+
+            <div class="detail-item">
+                <label>Descrição:</label>
+                <p>
+                    <%= descricao %>
+                </p>
+            </div>
+        </div>
+    </main>
+    <%- include ('rodape.ejs')%>
