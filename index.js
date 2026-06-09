@@ -60,6 +60,23 @@ app.post("/musicas/add", async (req, res) => {
   res.render("musica/addok");
 });
 
+//filtrar e pesquisar
+app.post('/musicas/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const musicas = await Musica.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("musica/lst", { musicas });
+})
+
+app.post('/generos/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const generos = await Genero.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("genero/lst", { generos });
+})
+
 app.listen(PORT, ()=>{
  console.log(
     `Servidor rodando em http://localhost:${PORT}`)
