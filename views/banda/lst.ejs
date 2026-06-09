@@ -1,0 +1,49 @@
+<%- include('../cabecalho.ejs')%>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lista de Bandas</h2>
+            <a href="/bandas/add" class="btn btn-success">+ Nova Banda</a>
+        </div>
+
+        <div class="search">
+            <form method="post">
+                <input type="text" name="pesquisar" placeholder="Nome da banda">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>País</th>
+                        <th>Ano de Início</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%bandas.forEach(banda=> {%>
+                        <tr>
+                            <td>
+                                <%=banda.nome%>
+                            </td>
+                            <td>
+                                <%=banda.pais%>
+                            </td>
+                            <td>
+                                <%=banda.anoInicio%>
+                            </td>
+                            <td>
+                                <a href="/bandas/del/<%=banda.id%>" class="link">Excluir</a>
+                                <a href="/bandas/edt/<%=banda.id%>" class="link">Editar</a>
+                            </td>
+                        </tr>
+                        <%})%>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <%- include('../rodape.ejs')%>

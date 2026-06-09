@@ -2,6 +2,7 @@ import express from "express";
 import Genero from './models/Genero.js';
 import Musica from './models/Musica.js';
 import Artista from './models/Artista.js';
+import Banda from './models/Banda.js';
 const app = express();
 const PORT = 3000;
 
@@ -61,10 +62,26 @@ app.post("/artistas/add", async (req, res) => {
   res.render("artista/addok");
 });
 
+//rotas das bandas
+app.get("/bandas", async (req, res) => {
+  const bandas = await Banda.find()
+  res.render("banda/lst", { bandas });
+});
+
+app.get("/bandas/add", (req, res) => {
+    res.render("banda/add");
+});
+
+app.post("/bandas/add", async (req, res) => {
+  const {nome, pais, anoInicio} = req.body;
+  await Banda.create({nome, pais, anoInicio});
+  res.render("banda/addok");
+});
+
 //excluir
 app.get('/musicas/del/:id', async (req, res) => {
 const musicas = await Musica.findByIdAndDelete(req.params.id)
-res.redirect("/musica/lst")
+res.redirect("/musicas")
 })
 
 app.get("/musicas/add", (req, res) => {
@@ -79,7 +96,7 @@ app.post("/musicas/add", async (req, res) => {
 
 app.get('/generos/del/:id', async (req, res) => {
 const generos = await Genero.findByIdAndDelete(req.params.id)
-res.redirect("/generos/lst")
+res.redirect("/generos")
 })
 
 app.get("/generos/add", (req, res) => {
@@ -94,7 +111,7 @@ app.post("/generos/add", async (req, res) => {
 
 app.get('/artistas/del/:id', async (req, res) => {
 const artistas = await Artista.findByIdAndDelete(req.params.id)
-res.redirect("/artista/lst")
+res.redirect("/artistas")
 })
 
 app.get("/artistas/add", (req, res) => {
@@ -105,6 +122,21 @@ app.post("/artistas/add", async (req, res) => {
   const {nome, pais, anoNascimento} = req.body;
   await Artista.create({nome, pais, anoNascimento});
   res.render("artista/addok");
+});
+
+app.get('/bandas/del/:id', async (req, res) => {
+const bandas = await Banda.findByIdAndDelete(req.params.id)
+res.redirect("/bandas")
+})
+
+app.get("/bandas/add", (req, res) => {
+    res.render("banda/add");
+});
+
+app.post("/bandas/add", async (req, res) => {
+  const {nome, pais, anoInicio} = req.body;
+  await Banda.create({nome, pais, anoInicio});
+  res.render("banda/addok");
 });
 
 //editar
@@ -138,6 +170,16 @@ const artista = await Artista.findByIdAndUpdate(req.params.id, req.body)
 res.render("artista/edtok")
 })
 
+app.get('/bandas/edt/:id', async (req, res) => {
+const banda = await Banda.findById(req.params.id)
+res.render("banda/edt", {banda})
+})
+
+app.post('/bandas/edt/:id', async (req, res) => {
+const banda = await Banda.findByIdAndUpdate(req.params.id, req.body)
+res.render("banda/edtok")
+})
+
 //filtrar e pesquisar
 app.post('/musicas/lst', async (req, res) => {
   const { pesquisar } = req.body;
@@ -161,6 +203,14 @@ app.post('/artistas/lst', async (req, res) => {
     nome: new RegExp(pesquisar, 'i')
   });
   res.render("artista/lst", { artistas });
+})
+
+app.post('/bandas/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const bandas = await Banda.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("banda/lst", { bandas });
 })
 
 app.listen(PORT, ()=>{
