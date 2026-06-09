@@ -60,6 +60,42 @@ app.post("/musicas/add", async (req, res) => {
   res.render("musica/addok");
 });
 
+app.get('/generos/del/:id', async (req, res) => {
+const generos = await Genero.findByIdAndDelete(req.params.id)
+res.redirect("/generos/lst")
+})
+
+app.get("/generos/add", (req, res) => {
+    res.render("genero/add");
+});
+
+app.post("/generos/add", async (req, res) => {
+  const {nome} = req.body;
+  await Genero.create({nome});
+  res.render("genero/addok");
+});
+
+//editar
+app.get('/musicas/edt/:id', async (req, res) => {
+const musica = await Musica.findById(req.params.id)
+res.render("musica/edt", {musica})
+})
+
+app.post('/musicas/edt/:id', async (req, res) => {
+const musica = await Musica.findByIdAndUpdate(req.params.id, req.body)
+res.render("musica/edtok")
+})
+
+app.get('/generos/edt/:id', async (req, res) => {
+const genero = await Genero.findById(req.params.id)
+res.render("genero/edt", {genero})
+})
+
+app.post('/generos/edt/:id', async (req, res) => {
+const genero = await Genero.findByIdAndUpdate(req.params.id, req.body)
+res.render("genero/edtok")
+})
+
 //filtrar e pesquisar
 app.post('/musicas/lst', async (req, res) => {
   const { pesquisar } = req.body;

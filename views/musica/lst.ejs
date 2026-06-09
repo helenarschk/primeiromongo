@@ -39,7 +39,10 @@
                             <td>
                                 <%=musica.duracao%>
                             </td>
-                            <td><a href="/musicas/del/<%=musica.id%>" class="link">Excluir</a></td>
+                            <td>
+                                <a href="/musicas/del/<%=musica.id%>" class="link">Excluir</a>
+                                <a href="/musicas/edt/<%=musica.id%>" class="link">Editar</a>
+                            </td>
                         </tr>
                         <%})%>
                 </tbody>

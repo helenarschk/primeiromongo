@@ -8,7 +8,7 @@
 
         <div class="search">
             <form method="post">
-                <input type="text" name="pesquisar" placeholder="Nome da música">
+                <input type="text" name="pesquisar" placeholder="Nome do gênero">
                 <input type="submit" value="Buscar">
             </form>
         </div>
@@ -27,7 +27,10 @@
                             <td>
                                 <%=genero.nome%>
                             </td>
-                            <td><a href="/generos/<%=genero.nome%>" class="link">Ver Detalhes</a></td>
+                            <td>
+                                <a href="/generos/del/<%=genero.id%>" class="link">Excluir</a>
+                                <a href="/generos/edt/<%=genero.id%>" class="link">Editar</a>
+                            </td>
                         </tr>
                         <%})%>
                 </tbody>
