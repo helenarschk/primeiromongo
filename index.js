@@ -54,7 +54,7 @@ const genero = await Genero.findByIdAndUpdate(req.params.id, req.body)
 res.render("genero/edtok")
 })
 
-app.post('/generos/lst', async (req, res) => {
+app.post('/generos', async (req, res) => {
   const { pesquisar } = req.body;
   const generos = await Genero.find({
     nome: new RegExp(pesquisar, 'i')
@@ -94,7 +94,7 @@ const musica = await Musica.findByIdAndUpdate(req.params.id, req.body)
 res.render("musica/edtok")
 })
 
-app.post('/musicas/lst', async (req, res) => {
+app.post('/musicas', async (req, res) => {
   const { pesquisar } = req.body;
   const musicas = await Musica.find({
     nome: new RegExp(pesquisar, 'i')
@@ -144,7 +144,7 @@ const artista = await Artista.findByIdAndUpdate(req.params.id, req.body)
 res.render("artista/edtok")
 })
 
-app.post('/artistas/lst', async (req, res) => {
+app.post('/artistas', async (req, res) => {
   const { pesquisar } = req.body;
   const artistas = await Artista.find({
     nome: new RegExp(pesquisar, 'i')
@@ -194,7 +194,7 @@ const banda = await Banda.findByIdAndUpdate(req.params.id, req.body)
 res.render("banda/edtok")
 })
 
-app.post('/bandas/lst', async (req, res) => {
+app.post('/bandas', async (req, res) => {
   const { pesquisar } = req.body;
   const bandas = await Banda.find({
     nome: new RegExp(pesquisar, 'i')
