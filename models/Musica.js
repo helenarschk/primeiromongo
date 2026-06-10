@@ -4,6 +4,7 @@ const MusicaSchema = new conexao.Schema({
   nome: String,
   duracao: String,
   artista: String,
+  genero: String,
   anoLancamento: Number
 });
 

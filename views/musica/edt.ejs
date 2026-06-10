@@ -1,4 +1,4 @@
-<%-include('../cabecalho.ejs')%>
+<%-include('.. /cabecalho.ejs')%>
     <header>
         <h3>Editar Música</h3>
     </header>
@@ -14,19 +14,24 @@
                     <input id="nome" value="<%=musica.nome%>" name="nome" type="text" placeholder="Ex:Gope" required>
                 </div>
                 <div>
-                    <label for="duracao">Duração da Música</label>
-                    <input id="duracao" value="<%=musica.duracao%>" name="duracao" type="text" placeholder="Ex:Gope"
+                    <label for="artista">Artista</label>
+                    <input id="artista" value="<%=musica.artista%>" name="artista" type="text" placeholder="Ex:Gope"
                         required>
                 </div>
                 <div>
-                    <label for="artista">Artista</label>
-                    <input id="artista" value="<%=musica.artista%>" name="artista" type="text" placeholder="Ex:Gope"
+                    <label for="genero">Gênero</label>
+                    <input id="genero" value="<%=musica.genero%>" name="genero" type="text" placeholder="Ex:Gope"
                         required>
                 </div>
                 <div>
                     <label for="anoLancamento">Ano de Lançamento da Música</label>
                     <input id="anoLancamento" value="<%=musica.anoLancamento%>" name="anoLancamento" type="text"
                         placeholder="Ex:Gope" required>
+                </div>
+                <div>
+                    <label for="duracao">Duração da Música</label>
+                    <input id="duracao" value="<%=musica.duracao%>" name="duracao" type="text" placeholder="Ex:Gope"
+                        required>
                 </div>
                 <div class="field-help">Os campos com * são obrigatórios.</div>
                 <footer>
@@ -36,4 +41,4 @@
         </form>
     </div>
 
-    <%-include('../rodape.ejs')%>
+    <%-include('.. /rodape.ejs')%>

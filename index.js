@@ -79,8 +79,8 @@ app.get("/musicas/add", (req, res) => {
 });
 
 app.post("/musicas/add", async (req, res) => {
-  const {nome, duracao, artista, anoLancamento} = req.body;
-  await Musica.create({nome, duracao, artista, anoLancamento});
+  const {nome, duracao, artista, genero, anoLancamento} = req.body;
+  await Musica.create({nome, duracao, artista, genero, anoLancamento});
   res.render("musica/addok");
 });
 
